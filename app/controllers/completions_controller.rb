@@ -6,6 +6,11 @@ class CompletionsController < ApplicationController
         redirect_to todos_path
     end
 
+    def destroy
+        todo.update_column :completed_at, nil
+        redirect_to todos_path
+    end
+
     #refactor current_user.todos.find menjadi fungsi private
     private
     def todo
