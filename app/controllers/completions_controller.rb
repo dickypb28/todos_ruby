@@ -1,6 +1,8 @@
 class CompletionsController < ApplicationController
     def create
-        todo.touch :completed_at
+
+        #me-refactor method touch complete_at dan meng-extract method complete!
+        todo.complete!
         redirect_to todos_path
     end
 
