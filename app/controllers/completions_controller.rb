@@ -7,7 +7,7 @@ class CompletionsController < ApplicationController
     end
 
     def destroy
-        todo.update_column :completed_at, nil
+        todo.mark_incomplete!
         redirect_to todos_path
     end
 
